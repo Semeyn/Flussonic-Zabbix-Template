@@ -1,0 +1,1 @@
+# Flussonic-Zabbix-Template
