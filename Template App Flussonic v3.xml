@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.2</version>
-    <date>2022-01-20T07:27:11Z</date>
+    <version>5.4</version>
+    <date>2022-01-20T16:31:23Z</date>
     <groups>
         <group>
+            <uuid>a571c0d144b14fd4a87a9d9b2aa9fcd6</uuid>
             <name>Templates/Applications</name>
         </group>
     </groups>
     <templates>
         <template>
+            <uuid>0ed7346c3b684686a804628435ee262d</uuid>
             <template>Template App Flussonic v3</template>
             <name>Template App Flussonic v3</name>
             <description>Monitoring Flussonic Author: Eynikov S.V. E-mail: semeneynikov@gmail.com</description>
@@ -17,1772 +19,819 @@
                     <name>Templates/Applications</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>Flussonic JSON DATA</name>
-                </application>
-                <application>
-                    <name>Flussonic Информация</name>
-                </application>
-                <application>
-                    <name>Flussonic потоки - Количество клиентов</name>
-                </application>
-                <application>
-                    <name>Flussonic потоки - Ошибки</name>
-                </application>
-                <application>
-                    <name>Flussonic потоки - Статус</name>
-                </application>
-                <application>
-                    <name>Flussonic устройства транскодинга</name>
-                </application>
-                <application>
-                    <name>Flussonuc потоки - Url текущего потока</name>
-                </application>
-            </applications>
             <items>
                 <item>
+                    <uuid>50eb13711d1c49c0a11e4f142644cd66</uuid>
                     <name>Загрузка процессора</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.cpu_usage</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>%</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.cpu_usage</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.cpu_usage</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>6957675f3e0b447298f45a12ee27687a</uuid>
                     <name>Скорость входящая</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.input_kbit</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.input_kbit</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.input_kbit</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>1</type>
-                            <params>1024</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>MULTIPLIER</type>
+                            <parameters>
+                                <parameter>1024</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>3ee153c055744ef693144927784c58b4</uuid>
                     <name>Статус лицензии</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.license_type</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <value_type>TEXT</value_type>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.license_type</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.license_type</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>20</type>
-                            <params>1d</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>1d</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>346900f87b8b43939283cc1239014a14</uuid>
+                            <expression>find(/Template App Flussonic v3/flussonic.license_type,,&quot;like&quot;,&quot;online&quot;)=0</expression>
+                            <name>Проблем лицензирования</name>
+                            <priority>DISASTER</priority>
+                            <tags>
+                                <tag>
+                                    <tag>Value</tag>
+                                    <value>{ITEM.VALUE}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>48a25fda501a4a6f90574d2523ed2403</uuid>
                     <name>Загрузка памяти</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.memory_usage</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>%</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.memory_usage</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.memory_usage</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>7882ff591c1844ffa3c8c8183a36775d</uuid>
                     <name>Версия следующая</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.next_version</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <value_type>TEXT</value_type>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.next_version</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.next_version</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>20</type>
-                            <params>1d</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>1d</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>0ab5b9382e25481cae9e3a8a2811cee9</uuid>
+                            <expression>length(last(/Template App Flussonic v3/flussonic.next_version))&gt;0</expression>
+                            <name>Вышла новая версия</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>Value</tag>
+                                    <value>{ITEM.VALUE}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>fa57731296dd4f43a5c0e309be40a16a</uuid>
                     <name>Скорость исходящая</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.output_kbit</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>bps</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.output_kbit</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.output_kbit</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>1</type>
-                            <params>1024</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>MULTIPLIER</type>
+                            <parameters>
+                                <parameter>1024</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>bd4cdfc59aad4402ac06389a92e18d07</uuid>
                     <name>Загрузка планировщика</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.scheduler_load</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>%</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.scheduler_load</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.scheduler_load</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>0b1a78b597b74f0394e3fc75c633ce0d</uuid>
                     <name>Статус стримера</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.streamer_status</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <value_type>TEXT</value_type>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.streamer_status</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.streamer_status</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>20</type>
-                            <params>1d</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>1d</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>0313ae8346c7482faee7dfb9193222ab</uuid>
+                            <expression>find(/Template App Flussonic v3/flussonic.streamer_status,,&quot;like&quot;,&quot;running&quot;)=0</expression>
+                            <name>Стример остановлен</name>
+                            <priority>DISASTER</priority>
+                            <tags>
+                                <tag>
+                                    <tag>Value</tag>
+                                    <value>{ITEM.VALUE}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>9fb9ccded53b4a6e9ce8bbd1b8406f76</uuid>
                     <name>Количество клиентов</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.total_clients</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.total_clients</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.total_clients</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>787745ac6bf648efae080237596d4111</uuid>
+                            <expression>last(/Template App Flussonic v3/flussonic.total_clients)&gt; {$FL.MAX_TOTAL_CLIENTS}</expression>
+                            <name>Количество клиентов превысило пороговое значение &gt; {$FL.MAX_TOTAL_CLIENTS}</name>
+                            <priority>INFO</priority>
+                            <description>Last value: {ITEM.LASTVALUE1}.
+The number of clients has exceeded the threshold {$FL.MAX_TOTAL_CLIENTS}</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>dd82be40dbea4ca39cf216db051eda7e</uuid>
                     <name>Количество потоков</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.total_streams</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.total_streams</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.total_streams</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>20</type>
-                            <params>1h</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>1h</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>36b51cc4511b4904834e2b013fd67843</uuid>
+                            <expression>last(/Template App Flussonic v3/flussonic.total_streams)&gt;{$FL.LIMIT_STREAMS}</expression>
+                            <name>Количество потоков превышает значение макроса {$FL.LIMIT_STREAMS}</name>
+                            <priority>WARNING</priority>
+                            <description>The number of streams exceeds the macro value.
+The macro value must be &gt; {$FL.LIMIT_STREAMS}</description>
+                            <tags>
+                                <tag>
+                                    <tag>Value</tag>
+                                    <value>{ITEM.VALUE}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>85a7847ac8d8411fb86ea95d3900a233</uuid>
                     <name>Время работы</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.uptime</key>
                     <delay>0</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
                     <units>uptime</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.uptime</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.uptime</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>7cfca7b4a1cf4f15b78793596a58b6b4</uuid>
+                            <expression>last(/Template App Flussonic v3/flussonic.uptime)&lt;10m</expression>
+                            <name>Служба Flussonic перезапущена (Время работы меньше 10 минут)</name>
+                            <priority>WARNING</priority>
+                            <description>Last value: {ITEM.LASTVALUE1}.
+Uptime is less than 10 minutes</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>ddee8d32a54741828cdb63bddcff150f</uuid>
                     <name>Версия</name>
-                    <type>18</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>DEPENDENT</type>
                     <key>flussonic.version</key>
                     <delay>0</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <value_type>TEXT</value_type>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.server_version</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.server_version</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>20</type>
-                            <params>1d</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>1d</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>json.config</key>
                     </master_item>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>36fb9a4143a44e88a75cbd6170d08761</uuid>
+                            <expression>(last(/Template App Flussonic v3/flussonic.version,#1)&lt;&gt;last(/Template App Flussonic v3/flussonic.version,#2))=1 and length(last(/Template App Flussonic v3/flussonic.version))&gt;0</expression>
+                            <recovery_mode>NONE</recovery_mode>
+                            <name>Изменилась версия Flussonic</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>Value</tag>
+                                    <value>{ITEM.VALUE}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>92406aa452cc4d418978171e2092d11d</uuid>
                     <name>Config</name>
-                    <type>19</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>HTTP_AGENT</type>
                     <key>json.config</key>
-                    <delay>1m</delay>
                     <history>0</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>4</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>1</authtype>
+                    <value_type>TEXT</value_type>
+                    <authtype>BASIC</authtype>
                     <username>{$FL.USER}</username>
                     <password>{$FL.PASS}</password>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
                     <description>Get /flussonic/api/v3/config</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
                     <timeout>60</timeout>
-                    <url>http://{HOST.IP}:{$FL.PORT}/flussonic/api/v3/config</url>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>0</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
+                    <url>{$FL.TRANSFER.PROTOCOL}://{$FL.HOST}:{$FL.PORT}/flussonic/api/v3/config</url>
+                    <follow_redirects>NO</follow_redirects>
                     <headers>
                         <header>
                             <name>Content-Type:</name>
                             <value>application/json; charset=utf-8</value>
                         </header>
                     </headers>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>53cc7ae452bc4e35a0d62b11986856d8</uuid>
                     <name>Ошибки количество</name>
-                    <type>7</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>ZABBIX_ACTIVE</type>
                     <key>log.count[/var/log/flussonic/flussonic.log,&quot;failed&quot;]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <value_type>LOG</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>e69c724f518142bcb7a526ee8943e346</uuid>
+                            <expression>last(/Template App Flussonic v3/log.count[/var/log/flussonic/flussonic.log,&quot;failed&quot;])&gt;={$FL.MAX_LOG_ERROR}</expression>
+                            <name>Проверьте лог на ошибки</name>
+                            <priority>DISASTER</priority>
+                            <tags>
+                                <tag>
+                                    <tag>Value</tag>
+                                    <value>{ITEM.VALUE}</value>
+                                </tag>
+                            </tags>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
+                    <uuid>431d6e4f82894c70b7056a783adcfac9</uuid>
                     <name>Ошибки</name>
-                    <type>7</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>ZABBIX_ACTIVE</type>
                     <key>log[/var/log/flussonic/flussonic.log,&quot;failed&quot;]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <value_type>LOG</value_type>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
                 </item>
                 <item>
+                    <uuid>eeac496e4d044028b20b6b6ed4311edf</uuid>
                     <name>Количество процессов Flussonic</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
                     <key>proc.num[streamer]</key>
-                    <delay>1m</delay>
-                    <history>90d</history>
                     <trends>0</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Flussonic Информация</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
                     <preprocessing>
                         <step>
-                            <type>20</type>
-                            <params>10m</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>10m</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Flussonic Информация</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>04ab7a1bd67345c2b234a5872a8415a1</uuid>
+                            <expression>last(/Template App Flussonic v3/proc.num[streamer])=0</expression>
+                            <name>Служба Flussonic не запущена</name>
+                            <priority>DISASTER</priority>
+                        </trigger>
+                    </triggers>
                 </item>
             </items>
             <discovery_rules>
                 <discovery_rule>
+                    <uuid>9d32f5bb3adc472088fd182b61a5215b</uuid>
                     <name>Flussonic stream discovery</name>
-                    <type>19</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>HTTP_AGENT</type>
                     <key>stream.discovery</key>
-                    <delay>1m</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>1</authtype>
+                    <authtype>BASIC</authtype>
                     <username>{$FL.USER}</username>
                     <password>{$FL.PASS}</password>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
-                        <conditions/>
-                    </filter>
-                    <lifetime>30d</lifetime>
-                    <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; Статус</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>bb57b261065b48fea6ed0696bb80e701</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; Статус</name>
+                            <type>DEPENDENT</type>
                             <key>stream[{#STREAM_NAME},alive]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic потоки - Статус</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.streams[0].stats.alive</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.streams[0].stats.alive</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>6</type>
-                                    <params/>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>BOOL_TO_DECIMAL</type>
+                                    <parameters>
+                                        <parameter/>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>20</type>
-                                    <params>1h</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <parameters>
+                                        <parameter>1h</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>stream[{#STREAM_NAME}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic потоки - Статус</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; Количество клиентов</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>e44a51bf500f4fadbd526bbb39397cd7</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; Количество клиентов</name>
+                            <type>DEPENDENT</type>
                             <key>stream[{#STREAM_NAME},client_count]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic потоки - Количество клиентов</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.streams[0].stats.client_count</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.streams[0].stats.client_count</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>20</type>
-                                    <params>1h</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <parameters>
+                                        <parameter>1h</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>stream[{#STREAM_NAME}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic потоки - Количество клиентов</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; Ошибка кодирования</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>b1fe3b6e5b864363999cd70ebe5a3539</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; Ошибка кодирования</name>
+                            <type>DEPENDENT</type>
                             <key>stream[{#STREAM_NAME},coder_error]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic потоки - Ошибки</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.streams[0].stats.coder_error</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.streams[0].stats.coder_error</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>6</type>
-                                    <params/>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>BOOL_TO_DECIMAL</type>
+                                    <parameters>
+                                        <parameter/>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>20</type>
-                                    <params>1h</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <parameters>
+                                        <parameter>1h</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>stream[{#STREAM_NAME}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic потоки - Ошибки</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>302b3a43a3f041cba3c00b4c10567d37</uuid>
+                                    <expression>last(/Template App Flussonic v3/stream[{#STREAM_NAME},coder_error])=1</expression>
+                                    <name>Поток &quot;{#STREAM_NAME}&quot; ошибка кодирования</name>
+                                    <priority>INFO</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; Ошибки в потоке</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>81f63473a0d24d9fa056fdde98dca2bc</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; Ошибки в потоке</name>
+                            <type>DEPENDENT</type>
                             <key>stream[{#STREAM_NAME},input_error_rate]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic потоки - Ошибки</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.streams[0].stats.input_error_rate</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.streams[0].stats.input_error_rate</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>20</type>
-                                    <params>1h</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <parameters>
+                                        <parameter>1h</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>stream[{#STREAM_NAME}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic потоки - Ошибки</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>b8ac8688abd041f0b1db55cbff7fc2d0</uuid>
+                                    <expression>last(/Template App Flussonic v3/stream[{#STREAM_NAME},input_error_rate])&gt;{$FL.MAX_INPUT_ERROR}</expression>
+                                    <name>Поток &quot;{#STREAM_NAME}&quot; содержит ошибки</name>
+                                    <priority>INFO</priority>
+                                    <tags>
+                                        <tag>
+                                            <tag>Value:</tag>
+                                            <value>{ITEM.VALUE}</value>
+                                        </tag>
+                                    </tags>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; Запущен</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>aeee15c81d8e4c2f817041bfd8f9d787</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; Запущен</name>
+                            <type>DEPENDENT</type>
                             <key>stream[{#STREAM_NAME},running]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic потоки - Статус</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.streams[0].stats.running</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.streams[0].stats.running</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>6</type>
-                                    <params/>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>BOOL_TO_DECIMAL</type>
+                                    <parameters>
+                                        <parameter/>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>20</type>
-                                    <params>1h</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <parameters>
+                                        <parameter>1h</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>stream[{#STREAM_NAME}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic потоки - Статус</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; Текущий URL потока</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>579bf43570e247ffb446cb0e326087ba</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; Текущий URL потока</name>
+                            <type>DEPENDENT</type>
                             <key>stream[{#STREAM_NAME},url]</key>
                             <delay>0</delay>
-                            <history>90d</history>
                             <trends>0</trends>
-                            <status>0</status>
-                            <value_type>4</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonuc потоки - Url текущего потока</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
+                            <value_type>TEXT</value_type>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.streams[0].urls[0].url</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.streams[0].urls[0].url</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>20</type>
-                                    <params>1h</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                                    <parameters>
+                                        <parameter>1h</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>stream[{#STREAM_NAME}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonuc потоки - Url текущего потока</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; JSON</name>
-                            <type>19</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <uuid>30fec94b1ade4dd284f583e889294231</uuid>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; JSON</name>
+                            <type>HTTP_AGENT</type>
                             <key>stream[{#STREAM_NAME}]</key>
                             <delay>30s</delay>
                             <history>0</history>
                             <trends>0</trends>
-                            <status>0</status>
-                            <value_type>4</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>1</authtype>
+                            <value_type>TEXT</value_type>
+                            <authtype>BASIC</authtype>
                             <username>{$FL.USER}</username>
                             <password>{$FL.PASS}</password>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic JSON DATA</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
                             <timeout>60</timeout>
-                            <url>http://{HOST.IP}:{$FL.PORT}/flussonic/api/v3/streams?name={#STREAM_NAME}</url>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
+                            <url>{$FL.TRANSFER.PROTOCOL}://{$FL.HOST}:{$FL.PORT}/flussonic/api/v3/streams?name={#STREAM_NAME}</url>
                             <headers>
                                 <header>
                                     <name>Content-Type:</name>
                                     <value>application/json; charset=utf-8</value>
                                 </header>
                             </headers>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
-                            <master_item/>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic JSON DATA</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template App Flussonic v3:stream[{#STREAM_NAME},alive].avg(#2)}=0 and {Template App Flussonic v3:stream[{#STREAM_NAME},running].last()}=1</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; не работает</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>1</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>1</manual_close>
-                            <dependencies/>
-                            <tags/>
+                            <uuid>cd18371182ae487bb7dda267a8f965de</uuid>
+                            <expression>avg(/Template App Flussonic v3/stream[{#STREAM_NAME},alive],#2)=0 and last(/Template App Flussonic v3/stream[{#STREAM_NAME},running])=1</expression>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; не работает</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App Flussonic v3:stream[{#STREAM_NAME},coder_error].last()}=1</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; ошибка кодирования</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>1</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
-                            <dependencies/>
-                            <tags/>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{Template App Flussonic v3:stream[{#STREAM_NAME},url].diff()}=1 and {Template App Flussonic v3:stream[{#STREAM_NAME},running].last()}=1</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; сменился источник потока</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>1</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>1</manual_close>
-                            <dependencies/>
-                            <tags>
-                                <tag>
-                                    <tag>Value:</tag>
-                                    <value>{ITEM.VALUE}</value>
-                                </tag>
-                            </tags>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{Template App Flussonic v3:stream[{#STREAM_NAME},input_error_rate].last()}&gt;{$FL.MAX_INPUT_ERROR}</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Поток &quot;{#STREAM_TITLE}&quot; содержит ошибки</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>1</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
-                            <dependencies/>
+                            <uuid>4e6b955c1547492e8baace02aa9bcc12</uuid>
+                            <expression>(last(/Template App Flussonic v3/stream[{#STREAM_NAME},url],#1)&lt;&gt;last(/Template App Flussonic v3/stream[{#STREAM_NAME},url],#2))=1 and last(/Template App Flussonic v3/stream[{#STREAM_NAME},running])=1</expression>
+                            <name>Поток &quot;{#STREAM_NAME}&quot; сменился источник потока</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
                             <tags>
                                 <tag>
                                     <tag>Value:</tag>
@@ -1791,31 +840,74 @@
                             </tags>
                         </trigger_prototype>
                     </trigger_prototypes>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                    <jmx_endpoint/>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <uuid>8d6e92aea2454ab98152ea59f0473d4f</uuid>
+                            <name>Поток {#STREAM_NAME}</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>1A7C11</color>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>stream[{#STREAM_NAME},client_count]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>1A7C11</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>stream[{#STREAM_NAME},running]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>2774A4</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>stream[{#STREAM_NAME},coder_error]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>A54F10</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>stream[{#STREAM_NAME},input_error_rate]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>5</sortorder>
+                                    <color>FC6EA3</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>stream[{#STREAM_NAME},alive]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
                     <timeout>60</timeout>
-                    <url>http://{HOST.IP}:{$FL.PORT}/flussonic/api/v3/streams?select=position,name,title&amp;limit={$FL.LIMIT_STREAMS}</url>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>0</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
+                    <url>{$FL.TRANSFER.PROTOCOL}://{$FL.HOST}:{$FL.PORT}/flussonic/api/v3/streams?select=position,name,title&amp;limit={$FL.LIMIT_STREAMS}</url>
+                    <follow_redirects>NO</follow_redirects>
                     <headers>
                         <header>
                             <name>Content-Type:</name>
                             <value>application/json; charset=utf-8</value>
                         </header>
                     </headers>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <lld_macro_paths>
                         <lld_macro_path>
                             <lld_macro>{#STREAM_NAME}</lld_macro>
@@ -1828,434 +920,355 @@
                     </lld_macro_paths>
                     <preprocessing>
                         <step>
-                            <type>21</type>
-                            <params>return value.replace('streams', 'data');</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JAVASCRIPT</type>
+                            <parameters>
+                                <parameter>return value.replace('streams', 'data');</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <master_item/>
                 </discovery_rule>
                 <discovery_rule>
+                    <uuid>abab03bd7cba40a2a426b0f42f162316</uuid>
                     <name>Flussonic transcoder devices discovery</name>
-                    <type>19</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <type>HTTP_AGENT</type>
                     <key>tdevices.discovery</key>
-                    <delay>1m</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>1</authtype>
+                    <authtype>BASIC</authtype>
                     <username>{$FL.USER}</username>
                     <password>{$FL.PASS}</password>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
                     <filter>
-                        <evaltype>0</evaltype>
-                        <formula/>
                         <conditions>
                             <condition>
                                 <macro>{#TYPE}</macro>
                                 <value>^cpu$</value>
-                                <operator>9</operator>
+                                <operator>NOT_MATCHES_REGEX</operator>
                                 <formulaid>A</formulaid>
                             </condition>
                         </conditions>
                     </filter>
-                    <lifetime>30d</lifetime>
-                    <description/>
                     <item_prototypes>
                         <item_prototype>
+                            <uuid>181785deae7548cab189689ad9bd9f89</uuid>
+                            <name>Устройство {#ID}: {#NAME} - gpu_dec</name>
+                            <type>DEPENDENT</type>
+                            <key>tdevice[{#ID},{#TYPE},gpu_dec]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.gpu_dec</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>tdevice[{#ID},{#TYPE}]</key>
+                            </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>768b717560fb455dadff046ddb5ea9f3</uuid>
+                                    <expression>last(/Template App Flussonic v3/tdevice[{#ID},{#TYPE},gpu_dec])&gt;={$FL.ALERT_GPU_DEC}</expression>
+                                    <name>Gpu {#ID}: {#NAME} - Dec &gt; {$FL.ALERT_GPU_DEC}</name>
+                                    <priority>HIGH</priority>
+                                    <manual_close>YES</manual_close>
+                                    <tags>
+                                        <tag>
+                                            <tag>Flussonic</tag>
+                                            <value>Gpu</value>
+                                        </tag>
+                                    </tags>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>0c17909f9bbe4202982867191a03108a</uuid>
+                            <name>Устройство {#ID}: {#NAME} - gpu_enc</name>
+                            <type>DEPENDENT</type>
+                            <key>tdevice[{#ID},{#TYPE},gpu_enc]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.gpu_enc</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>tdevice[{#ID},{#TYPE}]</key>
+                            </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>0b311045e864480b966ef92aa779302e</uuid>
+                                    <expression>last(/Template App Flussonic v3/tdevice[{#ID},{#TYPE},gpu_enc])&gt;={$FL.ALERT_GPU_ENC}</expression>
+                                    <name>Gpu {#ID}: {#NAME} - Enc &gt; {$FL.ALERT_GPU_ENC}</name>
+                                    <priority>HIGH</priority>
+                                    <manual_close>YES</manual_close>
+                                    <tags>
+                                        <tag>
+                                            <tag>Flussonic</tag>
+                                            <value>Gpu</value>
+                                        </tag>
+                                    </tags>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>1b4ca6c8e3854480994ce6d7ad59e4bf</uuid>
+                            <name>Устройство {#ID}: {#NAME} - gpu_sm</name>
+                            <type>DEPENDENT</type>
+                            <key>tdevice[{#ID},{#TYPE},gpu_sm]</key>
+                            <delay>0</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>%</units>
+                            <preprocessing>
+                                <step>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.gpu_sm</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <master_item>
+                                <key>tdevice[{#ID},{#TYPE}]</key>
+                            </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>682089a23e3d49feb1085608ffbc5644</uuid>
                             <name>Устройство {#ID}: {#NAME} - Объем памяти свободно</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <type>DEPENDENT</type>
                             <key>tdevice[{#ID},{#TYPE},memFree]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
                             <units>b</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic устройства транскодинга</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.memFree</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.memFree</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>tdevice[{#ID},{#TYPE}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
+                            <uuid>57ae91ee141f4918870312ff42e473f5</uuid>
                             <name>Устройство {#ID}: {#NAME} - Объем памяти всего</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <type>DEPENDENT</type>
                             <key>tdevice[{#ID},{#TYPE},memTotal]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
                             <units>b</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic устройства транскодинга</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.memTotal</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.memTotal</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>tdevice[{#ID},{#TYPE}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
+                            <uuid>c6b67b1adaa1497895ea390a24df103e</uuid>
                             <name>Устройство {#ID}: {#NAME} - Объем памяти использовано</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <type>DEPENDENT</type>
                             <key>tdevice[{#ID},{#TYPE},memUsed]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
                             <units>b</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic устройства транскодинга</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.memUsed</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.memUsed</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>tdevice[{#ID},{#TYPE}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                         <item_prototype>
+                            <uuid>942d415766954cacbddcec5d6db0ed45</uuid>
                             <name>Устройство {#ID}: {#NAME} - Температура</name>
-                            <type>18</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <type>DEPENDENT</type>
                             <key>tdevice[{#ID},{#TYPE},temp]</key>
                             <delay>0</delay>
-                            <history>90d</history>
-                            <trends>365d</trends>
-                            <status>0</status>
-                            <value_type>0</value_type>
-                            <allowed_hosts/>
+                            <value_type>FLOAT</value_type>
                             <units>C</units>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic устройства транскодинга</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.gpu_temp</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.gpu_temp</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
-                            <timeout>3s</timeout>
-                            <url/>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
-                            <headers/>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
                             <master_item>
                                 <key>tdevice[{#ID},{#TYPE}]</key>
                             </master_item>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>63defb2932ad4363896927e117698530</uuid>
+                                    <expression>last(/Template App Flussonic v3/tdevice[{#ID},{#TYPE},temp])&gt;={$FL.ALERT_GPU_TEMP}</expression>
+                                    <name>Gpu {#ID}: {#NAME} - Temp &gt; {$FL.ALERT_GPU_TEMP}</name>
+                                    <priority>HIGH</priority>
+                                    <manual_close>YES</manual_close>
+                                    <tags>
+                                        <tag>
+                                            <tag>Flussonic</tag>
+                                            <value>Gpu</value>
+                                        </tag>
+                                    </tags>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
+                            <uuid>364a3418a0a244baa9d400446ce58c04</uuid>
                             <name>Устройство транскодинга &quot;{#ID}&quot; {#NAME} JSON</name>
-                            <type>19</type>
-                            <snmp_community/>
-                            <snmp_oid/>
+                            <type>HTTP_AGENT</type>
                             <key>tdevice[{#ID},{#TYPE}]</key>
                             <delay>30s</delay>
                             <history>0</history>
                             <trends>0</trends>
-                            <status>0</status>
-                            <value_type>4</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>1</authtype>
+                            <value_type>TEXT</value_type>
+                            <authtype>BASIC</authtype>
                             <username>{$FL.USER}</username>
                             <password>{$FL.PASS}</password>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Flussonic устройства транскодинга</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
                             <preprocessing>
                                 <step>
-                                    <type>12</type>
-                                    <params>$.transcoder_devices[?(@.id=={#ID}&amp;&amp;@.type==&quot;{#TYPE}&quot;)]</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$.stats.transcoder_devices[?(@.id=={#ID}&amp;&amp;@.type==&quot;{#TYPE}&quot;)]</parameter>
+                                    </parameters>
                                 </step>
                                 <step>
-                                    <type>12</type>
-                                    <params>$[0]</params>
-                                    <error_handler>0</error_handler>
-                                    <error_handler_params/>
+                                    <type>JSONPATH</type>
+                                    <parameters>
+                                        <parameter>$[0]</parameter>
+                                    </parameters>
                                 </step>
                             </preprocessing>
-                            <jmx_endpoint/>
                             <timeout>60</timeout>
-                            <url>http://{HOST.IP}:{$FL.PORT}/flussonic/api/server</url>
-                            <query_fields/>
-                            <posts/>
-                            <status_codes>200</status_codes>
-                            <follow_redirects>1</follow_redirects>
-                            <post_type>0</post_type>
-                            <http_proxy/>
+                            <url>{$FL.TRANSFER.PROTOCOL}://{$FL.HOST}:{$FL.PORT}/flussonic/api/v3/config</url>
                             <headers>
                                 <header>
                                     <name>Content-Type:</name>
                                     <value>application/json; charset=utf-8</value>
                                 </header>
                             </headers>
-                            <retrieve_mode>0</retrieve_mode>
-                            <request_method>0</request_method>
-                            <output_format>0</output_format>
-                            <allow_traps>0</allow_traps>
-                            <ssl_cert_file/>
-                            <ssl_key_file/>
-                            <ssl_key_password/>
-                            <verify_peer>0</verify_peer>
-                            <verify_host>0</verify_host>
-                            <application_prototypes/>
-                            <master_item/>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>Flussonic устройства транскодинга</value>
+                                </tag>
+                            </tags>
                         </item_prototype>
                     </item_prototypes>
-                    <trigger_prototypes/>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                    <jmx_endpoint/>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <uuid>ea732689654c4e298e47257b52a361df</uuid>
+                            <name>Gpu {#ID}: {#NAME}</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>1A7C11</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>tdevice[{#ID},{#TYPE},gpu_dec]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>F63100</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>tdevice[{#ID},{#TYPE},gpu_enc]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <color>2774A4</color>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>tdevice[{#ID},{#TYPE},memFree]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>4</sortorder>
+                                    <color>A54F10</color>
+                                    <yaxisside>RIGHT</yaxisside>
+                                    <calc_fnc>MAX</calc_fnc>
+                                    <item>
+                                        <host>Template App Flussonic v3</host>
+                                        <key>tdevice[{#ID},{#TYPE},temp]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
                     <timeout>60</timeout>
-                    <url>http://{HOST.IP}:{$FL.PORT}/flussonic/api/v3/config</url>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>0</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
+                    <url>{$FL.TRANSFER.PROTOCOL}://{$FL.HOST}:{$FL.PORT}/flussonic/api/v3/config</url>
+                    <follow_redirects>NO</follow_redirects>
                     <headers>
                         <header>
                             <name>Content-Type:</name>
                             <value>application/json; charset=utf-8</value>
                         </header>
                     </headers>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <lld_macro_paths>
                         <lld_macro_path>
                             <lld_macro>{#ID}</lld_macro>
@@ -2288,23 +1301,36 @@
                     </lld_macro_paths>
                     <preprocessing>
                         <step>
-                            <type>12</type>
-                            <params>$.stats.transcoder_devices</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.stats.transcoder_devices</parameter>
+                            </parameters>
                         </step>
                         <step>
-                            <type>21</type>
-                            <params>return &quot;{\&quot;data\&quot;:&quot; + value + &quot;}&quot;;</params>
-                            <error_handler>0</error_handler>
-                            <error_handler_params/>
+                            <type>JAVASCRIPT</type>
+                            <parameters>
+                                <parameter>return &quot;{\&quot;data\&quot;:&quot; + value + &quot;}&quot;;</parameter>
+                            </parameters>
                         </step>
                     </preprocessing>
-                    <master_item/>
                 </discovery_rule>
             </discovery_rules>
-            <httptests/>
             <macros>
+                <macro>
+                    <macro>{$FL.ALERT_GPU_DEC}</macro>
+                    <value>99</value>
+                </macro>
+                <macro>
+                    <macro>{$FL.ALERT_GPU_ENC}</macro>
+                    <value>99</value>
+                </macro>
+                <macro>
+                    <macro>{$FL.ALERT_GPU_TEMP}</macro>
+                    <value>85</value>
+                </macro>
+                <macro>
+                    <macro>{$FL.HOST}</macro>
+                </macro>
                 <macro>
                     <macro>{$FL.LIMIT_STREAMS}</macro>
                     <value>1000</value>
@@ -2334,192 +1360,239 @@
                     <value>streamer</value>
                 </macro>
                 <macro>
+                    <macro>{$FL.TRANSFER.PROTOCOL}</macro>
+                    <value>https</value>
+                    <description>http or https ZabbixHttpAgent</description>
+                </macro>
+                <macro>
                     <macro>{$FL.USER}</macro>
                     <value>admin</value>
                 </macro>
             </macros>
-            <templates/>
-            <screens/>
-            <tags/>
+            <dashboards>
+                <dashboard>
+                    <uuid>03b4ce0d275d4405bc8721b0325e81f0</uuid>
+                    <name>Flussonic DashBoard</name>
+                    <display_period>10</display_period>
+                    <pages>
+                        <page>
+                            <widgets>
+                                <widget>
+                                    <type>GRAPH_CLASSIC</type>
+                                    <width>12</width>
+                                    <height>5</height>
+                                    <fields>
+                                        <field>
+                                            <type>GRAPH</type>
+                                            <name>graphid</name>
+                                            <value>
+                                                <name>Общ. Статистика</name>
+                                                <host>Template App Flussonic v3</host>
+                                            </value>
+                                        </field>
+                                    </fields>
+                                </widget>
+                                <widget>
+                                    <type>GRAPH_CLASSIC</type>
+                                    <x>12</x>
+                                    <width>12</width>
+                                    <height>5</height>
+                                    <fields>
+                                        <field>
+                                            <type>GRAPH</type>
+                                            <name>graphid</name>
+                                            <value>
+                                                <name>Трафик</name>
+                                                <host>Template App Flussonic v3</host>
+                                            </value>
+                                        </field>
+                                    </fields>
+                                </widget>
+                                <widget>
+                                    <type>GRAPH_CLASSIC</type>
+                                    <y>5</y>
+                                    <width>12</width>
+                                    <height>5</height>
+                                    <fields>
+                                        <field>
+                                            <type>GRAPH</type>
+                                            <name>graphid</name>
+                                            <value>
+                                                <name>Клиенты и потоки</name>
+                                                <host>Template App Flussonic v3</host>
+                                            </value>
+                                        </field>
+                                    </fields>
+                                </widget>
+                            </widgets>
+                        </page>
+                    </pages>
+                </dashboard>
+                <dashboard>
+                    <uuid>e9e7e58e42fe4426b73d48c60994a611</uuid>
+                    <name>Flussonic GPU</name>
+                    <display_period>10</display_period>
+                    <pages>
+                        <page>
+                            <widgets>
+                                <widget>
+                                    <type>GRAPH_PROTOTYPE</type>
+                                    <width>24</width>
+                                    <height>10</height>
+                                    <fields>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>rows</name>
+                                            <value>2</value>
+                                        </field>
+                                        <field>
+                                            <type>GRAPH_PROTOTYPE</type>
+                                            <name>graphid</name>
+                                            <value>
+                                                <name>Gpu {#ID}: {#NAME}</name>
+                                                <host>Template App Flussonic v3</host>
+                                            </value>
+                                        </field>
+                                    </fields>
+                                </widget>
+                            </widgets>
+                        </page>
+                    </pages>
+                </dashboard>
+                <dashboard>
+                    <uuid>d03dc20551fa4312ba7647dbc959bf70</uuid>
+                    <name>Flussonic Stream</name>
+                    <pages>
+                        <page>
+                            <widgets>
+                                <widget>
+                                    <type>GRAPH_PROTOTYPE</type>
+                                    <width>24</width>
+                                    <height>30</height>
+                                    <fields>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>columns</name>
+                                            <value>4</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>rows</name>
+                                            <value>5</value>
+                                        </field>
+                                        <field>
+                                            <type>GRAPH_PROTOTYPE</type>
+                                            <name>graphid</name>
+                                            <value>
+                                                <name>Поток {#STREAM_NAME}</name>
+                                                <host>Template App Flussonic v3</host>
+                                            </value>
+                                        </field>
+                                    </fields>
+                                </widget>
+                            </widgets>
+                        </page>
+                    </pages>
+                </dashboard>
+            </dashboards>
         </template>
     </templates>
-    <triggers>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.next_version.strlen()}&gt;0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Вышла новая версия</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>1</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>1</manual_close>
-            <dependencies/>
-            <tags>
-                <tag>
-                    <tag>Value</tag>
-                    <value>{ITEM.VALUE}</value>
-                </tag>
-            </tags>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.version.diff()}=1 and {Template App Flussonic v3:flussonic.version.strlen()}&gt;0</expression>
-            <recovery_mode>2</recovery_mode>
-            <recovery_expression/>
-            <name>Изменилась версия Flussonic</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>1</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>1</manual_close>
-            <dependencies/>
-            <tags>
-                <tag>
-                    <tag>Value</tag>
-                    <value>{ITEM.VALUE}</value>
-                </tag>
-            </tags>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.total_clients.last()}&gt; {$FL.MAX_TOTAL_CLIENTS}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Количество клиентов превысило пороговое значение &gt; {$FL.MAX_TOTAL_CLIENTS}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>1</priority>
-            <description>Last value: {ITEM.LASTVALUE1}.&#13;
-The number of clients has exceeded the threshold {$FL.MAX_TOTAL_CLIENTS}</description>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.total_streams.last()}&gt;{$FL.LIMIT_STREAMS}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Количество потоков превышает значение макроса {$FL.LIMIT_STREAMS}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>2</priority>
-            <description>The number of streams exceeds the macro value.&#13;
-The macro value must be &gt; {$FL.LIMIT_STREAMS}</description>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags>
-                <tag>
-                    <tag>Value</tag>
-                    <value>{ITEM.VALUE}</value>
-                </tag>
-            </tags>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.license_type.str(online)}=0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Проблем лицензирования</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>5</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags>
-                <tag>
-                    <tag>Value</tag>
-                    <value>{ITEM.VALUE}</value>
-                </tag>
-            </tags>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:log.count[/var/log/flussonic/flussonic.log,&quot;failed&quot;].last()}&gt;={$FL.MAX_LOG_ERROR}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Проверьте лог на ошибки</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>5</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags>
-                <tag>
-                    <tag>Value</tag>
-                    <value>{ITEM.VALUE}</value>
-                </tag>
-            </tags>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:proc.num[streamer].last()}=0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Служба Flussonic не запущена</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>5</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.uptime.last()}&lt;10m</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Служба Flussonic перезапущена (Время работы меньше 10 минут)</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>2</priority>
-            <description>Last value: {ITEM.LASTVALUE1}.&#13;
-Uptime is less than 10 minutes</description>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags/>
-        </trigger>
-        <trigger>
-            <expression>{Template App Flussonic v3:flussonic.streamer_status.str(running)}=0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
-            <name>Стример остановлен</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
-            <url/>
-            <status>0</status>
-            <priority>5</priority>
-            <description/>
-            <type>0</type>
-            <manual_close>0</manual_close>
-            <dependencies/>
-            <tags>
-                <tag>
-                    <tag>Value</tag>
-                    <value>{ITEM.VALUE}</value>
-                </tag>
-            </tags>
-        </trigger>
-    </triggers>
+    <graphs>
+        <graph>
+            <uuid>e060f545403e45bfa3314617d3e45c8b</uuid>
+            <name>Клиенты и потоки</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.total_clients</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.total_streams</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>632a7e8b798f4c89b8efa09fb40d2255</uuid>
+            <name>Общ. Статистика</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.memory_usage</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.scheduler_load</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.cpu_usage</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>proc.num[streamer]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>f2c4c5f250d14ba7ad381ec961cb7dee</uuid>
+            <name>Трафик</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.input_kbit</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <calc_fnc>MAX</calc_fnc>
+                    <item>
+                        <host>Template App Flussonic v3</host>
+                        <key>flussonic.output_kbit</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
 </zabbix_export>
